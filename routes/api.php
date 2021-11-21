@@ -30,9 +30,14 @@ Route::group(['prefix' => 'v1'], function () {
         
         Route::post('order/update', [\App\Http\Controllers\Api\v1\Ecommerce\OrderController::class, 'update']);
         Route::post('order/submit', [\App\Http\Controllers\Api\v1\Ecommerce\OrderController::class, 'submit']);
+
+        Route::get('payment/status', function () {
+            http_response_code(200);
+            exit;
+        });
     });
     
 });
 
-Route::post('test', [\App\Http\Controllers\Api\v1\Ecommerce\TestController::class, 'submit']);
+//Route::post('test', [\App\Http\Controllers\Api\v1\Ecommerce\TestController::class, 'submit']);
 

@@ -32,7 +32,7 @@ trait GeneratePayment
             'order_number' => $params['payment_code'],
             'callback' => [
                 'return_url' => config('option.gp_return_url'),
-                'notification_url' => config('option.gp_return_url')
+                'notification_url' => url('api/v1/ecommerce/payment/status')
             ],
             'lang' => 'CS',
         ]);
